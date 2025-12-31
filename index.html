@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Test project WEBSPARK</title>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css"
+		/>
+		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/media.css" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="container">
+					<div class="header__inner">
+						<div class="header__logo">
+							<div class="logo">
+								<img src="./img/logo.svg" alt="logo" />
+							</div>
+						</div>
+
+						<div class="header__description">
+							<div class="header__top">
+								<h3 class="header__title">monblanproject</h3>
+								<div class="header__start-date">Start on 17-02-2016</div>
+							</div>
+
+							<div class="header__main">
+								<div class="header__items">
+									<p>870</p>
+									<div>posts</div>
+								</div>
+
+								<div class="header__items">
+									<p>11,787</p>
+									<div>followers</div>
+								</div>
+
+								<div class="header__items">
+									<p>112</p>
+									<div>following</div>
+								</div>
+							</div>
+
+							<div class="header__date">
+								<div class="date-input-group">
+									<label for="date-from">Date:</label>
+
+									<div class="datepicker-wrapper">
+										<input
+											type="text"
+											id="date-from"
+											name="date-from"
+											class="header__date-input datepicker"
+											placeholder="from"
+											title="Формат: день-місяць-рік"
+											readonly
+											autocomplete="off"
+										/>
+
+										<button
+											type="button"
+											class="datepicker-clear"
+											aria-label="Очистити дату"
+										>
+											&times;
+										</button>
+									</div>
+								</div>
+
+								<div class="date-input-group">
+									<label for="date-to"></label>
+
+									<div class="datepicker-wrapper">
+										<input
+											type="text"
+											id="date-to"
+											name="date-to"
+											class="header__date-input datepicker"
+											placeholder="to"
+											title="Формат: день-місяць-рік"
+											readonly
+											autocomplete="off"
+										/>
+
+										<button
+											type="button"
+											class="datepicker-clear"
+											aria-label="Очистити дату"
+										>
+											&times;
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<main class="main">
+				<div class="container">
+					<div class="buttons__sort cards-view" role="group" aria-label="View switcher">
+						<button
+							class="cards-view__button cards-view__button--grid"
+							data-view="grid"
+							aria-pressed="false"
+						>
+							<svg viewBox="0 0 24 24">
+								<path
+									d="M3 3h4v4H3zM10 3h4v4h-4zM17 3h4v4h-4z
+										 M3 10h4v4H3zM10 10h4v4h-4zM17 10h4v4h-4z
+										 M3 17h4v4H3zM10 17h4v4h-4zM17 17h4v4h-4z"
+								/>
+							</svg>
+						</button>
+
+						<button
+							class="cards-view__button cards-view__button--list is-active"
+							data-view="list"
+							aria-pressed="true"
+						>
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect x="3" y="4" width="4" height="4" fill="currentColor" />
+								<rect x="10" y="5" width="11" height="2" fill="currentColor" />
+
+								<rect x="3" y="10" width="4" height="4" fill="currentColor" />
+								<rect x="10" y="11" width="11" height="2" fill="currentColor" />
+
+								<rect x="3" y="16" width="4" height="4" fill="currentColor" />
+								<rect x="10" y="17" width="11" height="2" fill="currentColor" />
+							</svg>
+						</button>
+					</div>
+
+					<div class="cards-list-container">
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/1.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/2.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/3.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/4.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/5.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/6.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/7.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/8.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--list">
+							<div class="card__img">
+								<img src="./img/img_rows/9.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--type">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="cards-grid-container">
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/10.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/11.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/12.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/13.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/14.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/15.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/16.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+
+						<div class="card card--grid">
+							<div class="card__img--grid">
+								<img src="./img/img_tiles/17.svg" alt="img" />
+							</div>
+
+							<div class="card__block-inner--grid">
+								<div class="card__block card__block--today">
+									<div class="card__block-title">Today</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+
+											<span class="card__stat-value">128</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+
+											<span class="card__stat-value">31</span>
+										</span>
+									</div>
+								</div>
+
+								<div class="card__block card__block--date">
+									<div class="card__block-title">9-08-2016</div>
+
+									<div class="card__block-stats">
+										<span class="card__stat card__stat--likes">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
+													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
+												/>
+											</svg>
+											<span class="card__stat-value">67</span>
+										</span>
+
+										<span class="card__stat card__stat--comments">
+											<svg
+												width="20"
+												height="18"
+												viewBox="0 0 20 18"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor"
+											>
+												<path
+													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
+												/>
+											</svg>
+											<span class="card__stat-value">22</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="card__block card__block--grid">
+								<div class="card__block-title">Image upload</div>
+								<div class="card__block-date">11-04-2016</div>
+							</div>
+						</div>
+					</div>
+
+					<button class="btn__load-more">LOAD MORE</button>
+				</div>
+			</main>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/uk.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+</html>
