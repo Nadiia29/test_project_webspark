@@ -445,11 +445,11 @@ body {
 .datepicker-wrapper {
 	position: relative;
 	display: inline-block;
-	width: 140px;
+	width: 150px;
 }
 .datepicker-clear {
 	position: absolute;
-	right: 8px;
+	right: 60px;
 	top: 50%;
 	transform: translateY(-50%);
 	background: none;
