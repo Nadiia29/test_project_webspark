@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 		<title>Test project WEBSPARK</title>
 		<link rel="stylesheet" href="./css/reset.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,10 +20,6 @@
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css"
 		/>
 		<link rel="stylesheet" href="./css/styles.css" />
 		<link rel="stylesheet" href="./css/media.css" />
@@ -65,33 +61,37 @@
 
 							<form class="header__date">
 								<div class="date-input-group">
-									<label for="date-from">Date:</label>
+									<label for="date-from">Date</label>
 
 									<div class="datepicker-wrapper">
 										<input
 											type="text"
 											id="date-from"
-											name="date-from"
 											class="header__date-input datepicker"
 											placeholder="from"
-											title="Формат: день-місяць-рік"
 											readonly
-											autocomplete="off"
 										/>
 
-										<button
-											type="button"
-											class="datepicker-clear"
-											aria-label="Очистити дату"
-										>
-											&times;
-										</button>
+										<div class="datepicker-actions">
+											<button
+												type="button"
+												class="datepicker-clear"
+												aria-label="Очистити дату"
+											>
+												&times;
+											</button>
+											<span class="calendar-icon-box">
+												<img
+													src="./img/bx_bx-calendar.svg"
+													alt="calendar"
+													class="calendar-icon"
+												/>
+											</span>
+										</div>
 									</div>
 								</div>
 
 								<div class="date-input-group">
-									<label for="date-to">to</label>
-
 									<div class="datepicker-wrapper">
 										<input
 											type="text"
@@ -104,13 +104,23 @@
 											autocomplete="off"
 										/>
 
-										<button
-											type="button"
-											class="datepicker-clear"
-											aria-label="Очистити дату"
-										>
-											&times;
-										</button>
+										<div class="datepicker-actions">
+											<button
+												type="button"
+												class="datepicker-clear"
+												aria-label="Очистити дату"
+											>
+												&times;
+											</button>
+
+											<span class="calendar-icon-box">
+												<img
+													src="./img/bx_bx-calendar.svg"
+													alt="calendar"
+													class="calendar-icon"
+												/>
+											</span>
+										</div>
 									</div>
 								</div>
 							</form>
@@ -127,13 +137,11 @@
 							data-view="grid"
 							aria-pressed="false"
 						>
-							<svg viewBox="0 0 24 24">
-								<path
-									d="M3 3h4v4H3zM10 3h4v4h-4zM17 3h4v4h-4z
-										 M3 10h4v4H3zM10 10h4v4h-4zM17 10h4v4h-4z
-										 M3 17h4v4H3zM10 17h4v4h-4zM17 17h4v4h-4z"
-								/>
-							</svg>
+							<img
+								src="./img/tiles.svg"
+								alt="Grid view"
+								class="view-icon view-icon--grid"
+							/>
 						</button>
 
 						<button
@@ -141,22 +149,11 @@
 							data-view="list"
 							aria-pressed="true"
 						>
-							<svg
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<rect x="3" y="4" width="4" height="4" fill="currentColor" />
-								<rect x="10" y="5" width="11" height="2" fill="currentColor" />
-
-								<rect x="3" y="10" width="4" height="4" fill="currentColor" />
-								<rect x="10" y="11" width="11" height="2" fill="currentColor" />
-
-								<rect x="3" y="16" width="4" height="4" fill="currentColor" />
-								<rect x="10" y="17" width="11" height="2" fill="currentColor" />
-							</svg>
+							<img
+								src="./img/rows1.svg"
+								alt="List view"
+								class="view-icon view-icon--list"
+							/>
 						</button>
 					</div>
 
@@ -172,34 +169,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -207,39 +183,20 @@
 								</div>
 
 								<section class="card__block card__block--date">
-									<time datetime="2016-08-09" class="card__block-title">
+									<time datetime="9-08-2016" class="card__block-title">
 										9-08-2016
 									</time>
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -265,34 +222,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -306,33 +242,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -358,34 +275,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -399,33 +295,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -451,34 +328,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -492,33 +348,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -544,34 +381,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -585,33 +401,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -637,34 +434,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -678,33 +454,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -730,34 +487,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -771,33 +507,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -823,34 +540,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -864,33 +560,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -916,34 +593,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -957,33 +613,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1011,34 +648,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1052,33 +668,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1104,34 +700,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1145,33 +720,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1197,34 +753,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1238,33 +773,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1290,34 +806,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1331,33 +826,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1383,34 +859,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1424,33 +879,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1476,34 +912,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1517,33 +932,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1569,34 +965,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1610,33 +985,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1662,34 +1018,13 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
 
 											<span class="card__stat-value">128</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
 
 											<span class="card__stat-value">31</span>
 										</li>
@@ -1703,33 +1038,14 @@
 
 									<ul class="card__block-stats">
 										<li class="card__stat card__stat--likes">
-											<svg
-												width="20"
-												height="20"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M12 21 C12 21 3.5 14.5 3.5 9 C3.5 6 6 4.2 8.8 4.2 C10.8 4.2 12 5.4 12 6.8 C12 5.4 13.2 4.2 15.2 4.2
-													C18 4.2 20.5 6 20.5 9 C20.5 14.5 12 21 12 21 Z "
-												/>
-											</svg>
+											<span class="icon icon-heart"></span>
+
 											<span class="card__stat-value">67</span>
 										</li>
 
 										<li class="card__stat card__stat--comments">
-											<svg
-												width="20"
-												height="18"
-												viewBox="0 0 20 18"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="currentColor"
-											>
-												<path
-													d="M2 1	H16	A2 2 0 0 1 18 3	V11	V18 L14 14 H4 A2 2 0 0 1 2 12 V3 A2 2 0 0 1 4 1	Z"
-												/>
-											</svg>
+											<span class="icon icon-comment"></span>
+
 											<span class="card__stat-value">22</span>
 										</li>
 									</ul>
@@ -1751,7 +1067,6 @@
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-		<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/uk.js"></script>
 		<script src="./js/main.js"></script>
 	</body>
 </html>

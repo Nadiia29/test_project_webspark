@@ -2,6 +2,7 @@
 :root {
 	/* Colors */
 	--color-bg: #fafafa;
+	--color-btn-change: #c8c7c7;
 	--color-primary: #ffffff;
 	--color-dark: #000000;
 	--color-accent: #3d8eda;
@@ -17,6 +18,10 @@
 }
 
 /* Base */
+html {
+	max-width: 100%;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -25,6 +30,7 @@
 
 body {
 	min-width: 320px;
+	max-width: 100%;
 	overflow-x: hidden;
 	font-family: var(--font-family);
 	font-size: var(--font-size-base);
@@ -44,10 +50,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	box-shadow: inset 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
 }
 
 .container {
-	max-width: 838px;
+	max-width: 870px;
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 20px 60px 20px;
@@ -59,7 +66,7 @@ body {
 	height: 172px;
 	color: var(--color-dark);
 	background: rgba(255, 255, 255, 0.7);
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.12), inset 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
 }
 
 .header__inner {
@@ -165,7 +172,8 @@ body {
 	justify-content: flex-end;
 	gap: 15px;
 	margin-top: 18px;
-	width: 836px;
+	width: 100%;
+	max-width: 836px;
 }
 
 .cards-view__button {
@@ -181,24 +189,24 @@ body {
 	transition: all 0.2s ease;
 }
 
-.cards-view__button svg {
+.view-icon {
 	width: 24px;
 	height: 22px;
-	color: var(--color-accent);
-	fill: currentColor;
+	display: block;
+	object-fit: contain;
 }
 
-.cards-view__button:hover {
-	background: #e9e9e9;
+.cards-view__button .view-icon {
+	filter: brightness(0) saturate(100%) invert(35%) sepia(89%) saturate(1000%) hue-rotate(180deg);
 }
 
 .cards-view__button.is-active {
 	background: var(--color-bg);
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.cards-view__button.is-active svg {
-	color: var(--color-btn);
+.cards-view__button.is-active .view-icon {
+	filter: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(0%) hue-rotate(0deg);
 }
 
 /* -------- cards-list ------- */
@@ -268,7 +276,7 @@ body {
 }
 
 .card--list .card__block--type {
-	margin-left: 150px;
+	margin-left: 100px;
 }
 
 /* ------- cards -grid ------------ */
@@ -325,7 +333,7 @@ body {
 	margin-top: 4px;
 }
 
-.card--grid .card__block-title {
+.card--grid {
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 100%;
@@ -355,11 +363,6 @@ body {
 	gap: 4px;
 }
 
-.card--grid .card__stat svg {
-	width: 16px;
-	height: 16px;
-}
-
 .card--grid .card__stat-value {
 	font-weight: 500;
 	font-size: 12px;
@@ -367,14 +370,32 @@ body {
 }
 
 /* ============== styles card general ============== */
-.card__stat--likes svg {
-	width: 18px;
-	height: 18px;
+.card__stat {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
 }
 
-.card__stat--comments svg {
-	width: 18px;
-	height: 18px;
+.icon {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.icon-heart {
+	background-image: url('../img/heart.svg');
+	height: 13.5px;
+}
+
+.icon-comment {
+	background-image: url('../img/comment.svg');
+}
+
+.card__stat:hover .icon {
+	filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(500%) hue-rotate(180deg);
 }
 
 .card__stat > span,
@@ -384,8 +405,11 @@ body {
 	line-height: 100%;
 	letter-spacing: 0%;
 }
+
 /* ------------ btn__load-more ------------- */
 .btn__load-more {
+	position: relative;
+	display: block;
 	font-size: 11px;
 	width: 111px;
 	height: 28px;
@@ -399,8 +423,9 @@ body {
 	font-weight: 500;
 	letter-spacing: 0.5px;
 	transition: all 0.3s ease;
-	display: block;
 	margin: 40px auto 0 auto;
+	clear: both;
+	z-index: 10;
 }
 
 .btn__load-more:hover {
@@ -409,158 +434,192 @@ body {
 }
 
 /* ==================== CUSTOM DATEPICKER STYLES ==================== */
+
 .date-input-group {
 	display: flex;
-	align-items: center;
-	align-items: flex-start;
-	gap: 8px;
+	gap: 6px;
 }
 
 .date-input-group label {
-	font-size: var(--font-size-base);
+	font-size: 16px;
 	font-weight: 500;
-	color: var(--color-text-secondary);
-	margin-bottom: 4px;
-}
-
-.header__date-input.datepicker {
-	width: 120px;
-	padding: 2px 30px 2px 2px;
-	background-color: var(--color-primary);
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 8px center;
-	background-size: 20px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-.header__date-input.datepicker:focus {
-	border-color: var(--color-accent);
-	outline: none;
-	box-shadow: 0 0 0 2px rgba(61, 142, 218, 0.2);
+	letter-spacing: 0.5px;
+	padding-right: 7px;
 }
 
 .datepicker-wrapper {
 	position: relative;
-	display: inline-block;
-	width: 150px;
+	display: inline-flex;
+	align-items: center;
+	background: #ffffff;
+	border: 1px solid #dedede;
+	border-radius: 4px;
 }
-.datepicker-clear {
-	position: absolute;
-	right: 60px;
-	top: 50%;
-	transform: translateY(-50%);
-	background: none;
+
+.header__date-input.datepicker {
+	width: 114px;
+	height: 28px;
+	padding: 0 8px;
 	border: none;
-	color: #999;
-	font-size: 16px;
+	background: transparent;
+	font-size: 14px;
+	outline: none;
 	cursor: pointer;
-	padding: 0;
+}
+
+.header__date-input.datepicker:focus {
+	box-shadow: none;
+}
+
+.datepicker-actions {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	background-color: #e5e8ec;
+	border-left: 1px solid #dedede;
+	padding: 0 8px;
+	height: 28px;
+	border-radius: 0 4px 4px 0;
+}
+
+.datepicker-clear {
+	background: transparent;
+	border-right: 0.5px solid rgba(0, 0, 0, 0.08);
+	padding-right: 6px;
+	font-size: 24px;
+	line-height: 1;
+	color: #5d6064;
+	cursor: pointer;
+	margin: 0;
+	display: inline-flex;
+	align-items: center;
+	transition: color 0.2s ease;
+}
+
+.datepicker-clear:hover {
+	color: #ef4444;
+}
+
+.calendar-icon-box {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 	line-height: 1;
 }
-.datepicker-clear:hover {
-	color: #333;
+
+.calendar-icon {
+	width: 24px;
+	height: 24px;
+	display: block;
 }
+/* ===== FLATPICKR ===== */
 
 .flatpickr-calendar {
-	font-family: var(--font-family);
-	border-radius: 8px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-	border: 1px solid #e6e6e6;
-	animation: fadeIn 0.3s ease;
+	background: #fff !important;
+	border-radius: 8px !important;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+	border: 1px solid #e5e7eb !important;
+	width: 260px !important;
+	font-family: var(--font-family) !important;
 }
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(-10px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+/* Шапка */
+.flatpickr-months .flatpickr-month {
+	background: #ffffff !important;
+	color: #1f2937 !important;
+	border-radius: 8px 8px 0 0 !important;
+	height: 40px !important;
 }
 
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month .numInputWrapper input {
+	color: #1f2937 !important;
+	font-weight: 500 !important;
+}
+
+/* Стрілки */
+.flatpickr-prev-month:before {
+	content: '«';
+	font-size: 18px;
+	font-weight: bold;
+	color: #4b5563;
+}
+
+.flatpickr-next-month:after {
+	content: '»';
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 2px;
+	color: #4b5563;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+	display: none;
+}
+
+/* Дні тижня */
+.flatpickr-weekday,
+span.flatpickr-weekday {
+	background: transparent !important;
+	color: #1f2937 !important;
+	font-weight: 700 !important;
+	font-size: 12px !important;
+	text-transform: capitalize !important;
+}
+
+/* Сітка днів */
+.flatpickr-days {
+	padding: 2px !important;
+}
+
+/* ВСІ ДНІ */
 .flatpickr-day {
-	border-radius: 4px;
-	font-weight: 500;
-}
-
-.flatpickr-day.selected,
-.flatpickr-day.selected:hover,
-.flatpickr-day.selected:focus {
-	background: var(--color-accent);
-	border-color: var(--color-accent);
-	color: white;
-	font-weight: 600;
-}
-
-.flatpickr-day.today {
-	border-color: var(--color-accent);
-	color: var(--color-accent);
-	font-weight: 600;
-}
-
-.flatpickr-day.today:hover {
-	background: var(--color-accent);
-	color: white;
+	margin: 1px !important;
+	width: 32px !important;
+	height: 32px !important;
+	line-height: 32px !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	color: #1f2937 !important;
 }
 
 .flatpickr-day:hover {
-	background: #f0f7ff;
-	border-color: #cce0ff;
+	background: #e5e7eb !important;
+	color: #1f2937 !important;
 }
 
-.flatpickr-months .flatpickr-month {
-	background: var(--color-accent);
-	color: white;
-	border-radius: 8px 8px 0 0;
-	height: 50px;
+/* Неділі — сірий фон */
+.flatpickr-days .flatpickr-day:nth-child(7n + 1) {
+	background-color: #f3f4f6 !important;
 }
 
-.flatpickr-current-month .flatpickr-monthDropdown-months {
-	color: white;
-	font-weight: 600;
-}
-
-.flatpickr-current-month .flatpickr-monthDropdown-months option {
-	color: #333;
-}
-
-.flatpickr-current-month .numInputWrapper span {
-	color: white;
-}
-
-.flatpickr-current-month .numInputWrapper input {
-	color: white;
-	font-weight: 600;
-}
-
-.flatpickr-weekdays {
-	background: #f8f8f8;
-	padding: 8px 0;
-	border-bottom: 1px solid #eee;
-}
-
-.flatpickr-weekday {
-	color: #666;
-	font-weight: 600;
-	font-size: 13px;
-}
-
-.flatpickr-prev-month,
-.flatpickr-next-month {
+/* Вибраний день */
+.flatpickr-day.selected {
+	background: #3b82f6 !important;
 	color: white !important;
-	fill: white !important;
 }
 
-.flatpickr-prev-month:hover,
-.flatpickr-next-month:hover {
-	color: #e6f2ff !important;
+/* Діапазон */
+.flatpickr-day.inRange,
+.flatpickr-day.endRange,
+.flatpickr-day.startRange {
+	background: #e0f2fe !important;
+	color: #1f2937 !important;
 }
 
-.flatpickr-calendar .flatpickr-time {
-	border-top: 1px solid #eee;
+/* Сьогодні */
+.flatpickr-day.today {
+	border: 1px solid #3d8eda !important;
+	color: #3d8eda !important;
+}
+
+.flatpickr-day.disabled {
+	color: #d1d5db !important;
+}
+
+/* Лінія під днями тижня */
+.flatpickr-weekdays {
+	border-bottom: 1px solid #e5e7eb !important;
 }
