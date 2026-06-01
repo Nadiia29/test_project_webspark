@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			return;
 		}
 
-		flatpickr.localize(flatpickr.l10ns.en);
+		// flatpickr.localize(flatpickr.l10ns.en);
 
 		const disableDates = function (date) {
 			const minDate = new Date(2016, 7, 1);
